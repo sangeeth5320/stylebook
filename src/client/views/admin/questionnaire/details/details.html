@@ -1,0 +1,114 @@
+<template name="AdminQuestionnaireDetails">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+				<div id="page_menu" class="pull-right">
+				</div>
+			</div>
+		</div>
+		{{> AdminQuestionnaireDetailsDetailsForm}}
+	</div>
+</template>
+
+<template name="AdminQuestionnaireDetailsDetailsForm">
+	<div id="admin-questionnaire-details-details-form" class="">
+		<h2 id="component-title">
+			<a href="#" id="form-back-button" class="btn btn-default" title="back">
+				<span class="fa fa-chevron-left">
+				</span>
+			</a>
+			Details
+		</h2>
+		<form role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-questionnaire-id">
+				<label for="questionnaireId">
+					Questionnaire Id
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-questionnaire-id">
+						{{questionnaire_details.questionnaireId}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-date">
+				<label for="date">
+					Date
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-date">
+						{{formatDate questionnaire_details.date 'MM-DD-YYYY'}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-question1">
+				<label for="question1">
+					How did you hear about me?
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-question1">
+						{{questionnaire_details.question1}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-question2">
+				<label for="question2">
+					What would you like to accomplish with me during your image  strategy session? (Check all that apply)
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-question2">
+						{{questionnaire_details.question2}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-question3">
+				<label for="question3">
+					In which areas do you feel you need advice? (Check all that apply)
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-question3">
+						{{questionnaire_details.question3}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-question4">
+				<label for="question4">
+					Personal Image Questions
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-question4">
+						{{questionnaire_details.question4}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-customer-name">
+				<label for="customer.name">
+					Customer
+				</label>
+				<div class="input-div">
+					<p class="form-control-static  control-field-customer-name">
+						{{questionnaire_details.customer.name}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<a href="#" id="form-close-button" class="btn btn-primary">
+						OK
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+

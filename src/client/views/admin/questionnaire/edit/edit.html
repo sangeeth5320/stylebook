@@ -1,0 +1,227 @@
+<template name="AdminQuestionnaireEdit">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+				<div id="page_menu" class="pull-right">
+				</div>
+			</div>
+		</div>
+		{{> AdminQuestionnaireEditEditForm}}
+	</div>
+</template>
+
+<template name="AdminQuestionnaireEditEditForm">
+	<div id="admin-questionnaire-edit-edit-form" class="">
+		<h2 id="component-title">
+			Edit questionnaire
+		</h2>
+		<form role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-questionnaire-id">
+				<label for="questionnaireId">
+					Questionnaire Id
+				</label>
+				<div class="input-div">
+					<input type="text" name="questionnaireId" value="{{questionnaire_details.questionnaireId}}" class="form-control " autofocus="autofocus" required="required" data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-date">
+				<label for="date">
+					Date
+				</label>
+				<div class="input-div">
+					<div class="input-group date">
+						<input type="text" name="date" value="{{formatDate questionnaire_details.date 'MM-DD-YYYY'}}" class="form-control " required="required" data-type="date" data-format="MM-DD-YYYY">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar">
+							</i>
+						</span>
+					</div>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-question1">
+				<label for="question1">
+					How did you hear about me?
+				</label>
+				<div class="input-div">
+					<textarea class="form-control " name="question1">{{questionnaire_details.question1}}</textarea>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-question2">
+				<label for="question2">
+					What would you like to accomplish with me during your image  strategy session? (Check all that apply)
+				</label>
+				<div class="input-div" data-required="true">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "1"}}>
+							Develop a more professional image
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "1"}}>
+							Develop a signature style
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "1"}}>
+							Increase confidence
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="true" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "true"}}>
+							Create “Go To” outfits for business
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "1"}}>
+							Create “Go To” outfits for weekend and casual events
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "1"}}>
+							Create “Go To” outfits for social events (drinks/parties, etc.)
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question2" data-type="array" {{itemIsChecked questionnaire_details.question2 "1"}}>
+							Learn to dress for your body type
+						</label>
+					</div>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-question3">
+				<label for="question3">
+					In which areas do you feel you need advice? (Check all that apply)
+				</label>
+				<div class="input-div" data-required="true">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Clothing selection
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Develop a signature style
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Creating a complete wardrobe
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="true" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "true"}}>
+							Creating a special occasion look; Name & date of special occasio
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Working within a limited budge
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Accessorizing
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Makeup
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="1" name="question3" data-type="array" {{itemIsChecked questionnaire_details.question3 "1"}}>
+							Hair
+						</label>
+					</div>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-question4">
+				<label for="question4">
+					Personal Image Questions
+				</label>
+				<div class="input-div">
+					<textarea class="form-control " name="question4">{{questionnaire_details.question4}}</textarea>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-customer-id">
+				<label for="customerId">
+					Customer
+				</label>
+				<div class="input-div">
+					<select class="form-control " name="customerId" data-type="string" required="required">
+						{{#each customer_list}}
+						<option value="{{_id}}" {{optionIsSelected ../questionnaire_details.customerId _id}}>							{{name}}</option>
+						{{/each}}
+					</select>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<button id="form-submit-button" class="btn btn-success" type="submit">
+						<span class="fa fa-check">
+						</span>
+						Save
+					</button>
+					<a href="#" id="form-cancel-button" class="btn btn-default">
+						Cancel
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+
